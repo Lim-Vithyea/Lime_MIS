@@ -263,7 +263,7 @@ class __TwigTemplate_e26be162281a71b9b31b0046ff2fd316 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "modals.twig", "C:\\wamp64\\www\\limesurvey\\application\\views\\questionAdministration\\modals.twig");
+        return new Source("", "modals.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\application\\views\\questionAdministration\\modals.twig");
     }
     
     public function checkSecurity()

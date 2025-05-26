@@ -151,7 +151,7 @@ class __TwigTemplate_aba7147b6ddef67479991ba8abdcbe90 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "./subviews/header/google_analytics.twig", "C:\\wamp64\\www\\limesurvey\\themes\\survey\\vanilla\\views\\subviews\\header\\google_analytics.twig");
+        return new Source("", "./subviews/header/google_analytics.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\themes\\survey\\vanilla\\views\\subviews\\header\\google_analytics.twig");
     }
     
     public function checkSecurity()

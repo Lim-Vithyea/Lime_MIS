@@ -552,7 +552,7 @@ class __TwigTemplate_602de66383b267ec065450f3fd3f180d extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "./subviews/header/custom_header.twig", "C:\\wamp64\\www\\limesurvey\\themes\\survey\\fruity\\views\\subviews\\header\\custom_header.twig");
+        return new Source("", "./subviews/header/custom_header.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\themes\\survey\\fruity\\views\\subviews\\header\\custom_header.twig");
     }
     
     public function checkSecurity()
