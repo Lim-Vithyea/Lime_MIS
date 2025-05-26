@@ -1629,6 +1629,11 @@ class Survey extends LSActiveRecord implements PermissionInterface
                 'htmlOptions'       => ['class' => 'd-md-none d-lg-table-cell has-link'],
             ],
             [
+                'header' => gt('Owner'),
+                'name' => 'owner',
+                'value' => '$data->owner ? $data->owner->users_name : "Unknown"',
+            ],
+            [
                 'header' => gT('Action'),
                 'name'   => 'actions',
                 'value'  => '$data->actionButtons',
