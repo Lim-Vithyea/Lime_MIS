@@ -19,7 +19,7 @@ echo viewHelper::getViewTestTag('login');
                     <img src="<?= Yii::app()->baseUrl ?>/assets/images/PED.png" height="100" class="align-bottom" alt="">
                 </div>
                 <h1 class="pb-3 display-6 text-center"><strong><?php eT("PED MIS Tool"); ?></strong></h1>
-                <h2 class="pt-2 pb-2"><?php eT("Log in"); ?></h2>
+                <h2 class="pb-2"><?php eT("Log in"); ?></h2>
                 <!-- Form -->
                 <?php
                 echo CHtml::form(['admin/authentication/sa/login'], 'post', ['id' => 'loginform', 'name' => 'loginform']); ?>
@@ -125,16 +125,16 @@ echo viewHelper::getViewTestTag('login');
                         <p><input type='hidden' name='action' value='login' />
                             <input type='hidden' id='width' name='width' value='' />
                             <button type="submit" class="btn btn-primary w-100" 
-                                style="background-color: #007bff; border-color: #007bff; color: white;" 
+                                style="background-color: blue; border-color: #007bff; color: white;" 
                                 name="login_submit" value="login"><?php eT('Log in'); ?>
                             </button>
                         </p>
                         <?php
                         if (Yii::app()->getConfig("display_user_password_in_email") === true) {
                         ?>
-                            <a href='<?php
-                                        echo $this->createUrl("admin/authentication/sa/forgotpassword"); ?>'><?php
-                                                                                                                eT("Forgot your password?"); ?></a><br />
+                            <a style="color: blue"
+                            href='<?php echo $this->createUrl("admin/authentication/sa/forgotpassword"); ?>'>
+                            <?php eT("Forgot your password?"); ?></a><br />
                         <?php
                         }
                         ?>
