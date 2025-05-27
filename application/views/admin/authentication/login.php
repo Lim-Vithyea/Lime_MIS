@@ -19,7 +19,7 @@ echo viewHelper::getViewTestTag('login');
                     <img src="<?= Yii::app()->baseUrl ?>/assets/images/PED.png" height="100" class="align-bottom" alt="">
                 </div>
                 <h1 class="pb-3 display-6 text-center"><strong><?php eT("PED MIS Tool"); ?></strong></h1>
-                <h2 class="pb-2"><?php eT("Log in"); ?></h2>
+                <!-- <h2 class="pb-2"><?php //eT("Log in"); ?></h2> -->
                 <!-- Form -->
                 <?php
                 echo CHtml::form(['admin/authentication/sa/login'], 'post', ['id' => 'loginform', 'name' => 'loginform']); ?>
