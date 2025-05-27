@@ -12,11 +12,14 @@ echo viewHelper::getViewTestTag('login');
 </noscript>
 <div class="login">
     <div class="row main-body">
-        <div class="col-12 col-xl col-right">
+        
+        <div class="col-12 d-flex justify-content-center align-items-center">
             <div class="login-panel">
-                <h1><?php eT("PED SurveyTool"); ?></h1>
-                <h2><?php eT("Log in"); ?></h2>
-
+                <div class="d-flex justify-content-center pb-3">
+                    <img src="<?= Yii::app()->baseUrl ?>/assets/images/PED.png" height="100" class="align-bottom" alt="">
+                </div>
+                <h1 class="pb-3 display-6 text-center"><strong><?php eT("PED MIS Tool"); ?></strong></h1>
+                <h2 class="pt-2 pb-2"><?php eT("Log in"); ?></h2>
                 <!-- Form -->
                 <?php
                 echo CHtml::form(['admin/authentication/sa/login'], 'post', ['id' => 'loginform', 'name' => 'loginform']); ?>
@@ -116,12 +119,15 @@ echo viewHelper::getViewTestTag('login');
                 </div>
 
                 <!-- Buttons -->
+                 <div class="pt-5">
                 <div class="row login-submit login-content">
                     <div class="col-12">
                         <p><input type='hidden' name='action' value='login' />
                             <input type='hidden' id='width' name='width' value='' />
-                            <button type="submit" class="btn btn-primary" name='login_submit' value='login'><?php
-                                                                                                            eT('Log in'); ?></button>
+                            <button type="submit" class="btn btn-primary w-100" 
+                                style="background-color: #007bff; border-color: #007bff; color: white;" 
+                                name="login_submit" value="login"><?php eT('Log in'); ?>
+                            </button>
                         </p>
                         <?php
                         if (Yii::app()->getConfig("display_user_password_in_email") === true) {
@@ -135,11 +141,12 @@ echo viewHelper::getViewTestTag('login');
                     </div>
 
                 </div>
+                </div>
                 <?php
                 echo CHtml::endForm(); ?>
             </div>
         </div>
-        <?php echo Yii::app()->getController()->renderPartial('/admin/authentication/sidebar'); ?>
+        <?php //echo Yii::app()->getController()->renderPartial('/admin/authentication/sidebar'); ?>
     </div>
 </div>
 <!-- Set focus on user input -->

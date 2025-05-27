@@ -698,7 +698,7 @@ $context["ansrow"], "myfid1", [], "any", false, false, true, 123), 123, $this->s
 
     public function getSourceContext()
     {
-        return new Source("", "/survey/questions/answer/arrays/dualscale/answer.twig", "C:\\wamp64\\www\\limesurvey\\application\\views\\survey\\questions\\answer\\arrays\\dualscale\\answer.twig");
+        return new Source("", "/survey/questions/answer/arrays/dualscale/answer.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\application\\views\\survey\\questions\\answer\\arrays\\dualscale\\answer.twig");
     }
     
     public function checkSecurity()

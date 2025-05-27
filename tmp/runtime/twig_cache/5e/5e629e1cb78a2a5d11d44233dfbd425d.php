@@ -84,7 +84,7 @@ class __TwigTemplate_c0fc23c5faa0d4047cc3660e4d5cd58e extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "./subviews/privacy/allinone_mode_welcome_privacy.twig", "C:\\wamp64\\www\\limesurvey\\themes\\survey\\fruity_twentythree\\views\\subviews\\privacy\\allinone_mode_welcome_privacy.twig");
+        return new Source("", "./subviews/privacy/allinone_mode_welcome_privacy.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\themes\\survey\\fruity_twentythree\\views\\subviews\\privacy\\allinone_mode_welcome_privacy.twig");
     }
     
     public function checkSecurity()

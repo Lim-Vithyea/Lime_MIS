@@ -222,7 +222,7 @@ class __TwigTemplate_ba9f931b262c889ae44e7e5421efa5ab extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "./subviews/messages/bootstrap_alert_modal.twig", "C:\\wamp64\\www\\limesurvey\\themes\\survey\\fruity_twentythree\\views\\subviews\\messages\\bootstrap_alert_modal.twig");
+        return new Source("", "./subviews/messages/bootstrap_alert_modal.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\themes\\survey\\fruity_twentythree\\views\\subviews\\messages\\bootstrap_alert_modal.twig");
     }
     
     public function checkSecurity()

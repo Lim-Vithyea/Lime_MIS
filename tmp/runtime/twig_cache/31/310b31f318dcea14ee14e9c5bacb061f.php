@@ -86,7 +86,7 @@ class __TwigTemplate_2cca0a50717dfba9321ef5615b442560 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "./subviews/navigation/clearall_buttons.twig", "C:\\wamp64\\www\\limesurvey\\themes\\survey\\fruity_twentythree\\views\\subviews\\navigation\\clearall_buttons.twig");
+        return new Source("", "./subviews/navigation/clearall_buttons.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\themes\\survey\\fruity_twentythree\\views\\subviews\\navigation\\clearall_buttons.twig");
     }
     
     public function checkSecurity()

@@ -141,7 +141,7 @@ class __TwigTemplate_12e33e833355a51960155e51c8657c2e extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "./subviews/header/head.twig", "C:\\wamp64\\www\\limesurvey\\themes\\survey\\fruity_twentythree\\views\\subviews\\header\\head.twig");
+        return new Source("", "./subviews/header/head.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\themes\\survey\\fruity_twentythree\\views\\subviews\\header\\head.twig");
     }
     
     public function checkSecurity()

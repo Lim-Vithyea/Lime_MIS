@@ -59,7 +59,7 @@ class __TwigTemplate_f29dc9d8aa2bfd57c812722b78f4991b extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "/survey/questions/answer/listradio/columns/column_footer.twig", "C:\\wamp64\\www\\limesurvey\\application\\views\\survey\\questions\\answer\\listradio\\columns\\column_footer.twig");
+        return new Source("", "/survey/questions/answer/listradio/columns/column_footer.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\application\\views\\survey\\questions\\answer\\listradio\\columns\\column_footer.twig");
     }
     
     public function checkSecurity()

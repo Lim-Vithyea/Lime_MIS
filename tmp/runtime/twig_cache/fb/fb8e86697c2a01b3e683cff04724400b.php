@@ -81,7 +81,7 @@ class __TwigTemplate_4f14a11577ee7e2a40bdad38a8ec9add extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "/survey/questions/answer/arrays/dualscale/answer_header.twig", "C:\\wamp64\\www\\limesurvey\\application\\views\\survey\\questions\\answer\\arrays\\dualscale\\answer_header.twig");
+        return new Source("", "/survey/questions/answer/arrays/dualscale/answer_header.twig", "C:\\wamp64\\www\\limemis\\Lime_MIS\\application\\views\\survey\\questions\\answer\\arrays\\dualscale\\answer_header.twig");
     }
     
     public function checkSecurity()
