@@ -10,9 +10,9 @@
 </noscript>
 <div class="login">
     <div class="row main-body">
-        <div class="col-12 col-xl col-right">
+        <div class="col-12 d-flex justify-content-center align-items-center">
             <div class="login-panel">
-                <h1><?php eT("Administration"); ?></h1>
+                <h1 class="text-center"><?php eT("Administration"); ?></h1>
                 <p><?php eT("Recover your password"); ?></p>
 
                 <!-- Form -->
@@ -46,13 +46,13 @@
                 </div>
 
                 <!-- Buttons -->
-                <div class="row login-submit login-content">
+                <div class="row login-submit login-content pt-5">
                     <div class="col-12">
                         <input type="hidden" name="action" value="forgotpass" />
-                        <input class="action btn btn-primary" type="submit" value="<?php
+                        <input class="action btn " style="background-color: blue;color: white" type="submit" value="<?php
                                                                                     eT('Check data'); ?>" />
                         <br /><br />
-                        <a href="<?php
+                        <a style="color: blue;" href="<?php
                                     echo $this->createUrl("/admin"); ?>"><?php
                                                                             eT('Main Admin Screen'); ?></a>
                     </div>
@@ -63,6 +63,6 @@
 
             </div>
         </div>
-        <?php echo Yii::app()->getController()->renderPartial('/admin/authentication/sidebar'); ?>
+        <?php //echo Yii::app()->getController()->renderPartial('/admin/authentication/sidebar'); ?>
     </div>
 </div>
