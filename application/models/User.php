@@ -129,7 +129,12 @@ class User extends LSActiveRecord
             // created as datetime default current date in create scenario ?
             // modifier as datetime default current date ?
             array('validation_key', 'length','max' => self::MAX_VALIDATION_KEY_LENGTH),
-            //todo: write a rule for date (can also be null)
+            array('dt_id', 'required'),
+            array('dt_id', 'numerical', 'integerOnly' => true),
+            array('dt_id', 'safe'),
+
+
+                //todo: write a rule for date (can also be null)
             //array('lastForgotPwEmail', 'numerical', 'integerOnly' => true, 'allowEmpty' => true),
         );
     }
@@ -275,7 +280,7 @@ class User extends LSActiveRecord
      * @param boolean $status
      * @return integer|boolean User ID if success
      */
-    public static function insertUser($new_user, $new_pass, $new_full_name, $parent_user, $new_email, $expires = null, $status = true)
+    public static function insertUser($new_user, $new_pass, $new_full_name, $parent_user, $new_email, $expires = null, $status = true,$dt_id)
     {
         $oUser = new self();
         $oUser->users_name = $new_user;
@@ -288,6 +293,7 @@ class User extends LSActiveRecord
         $oUser->modified = date('Y-m-d H:i:s');
         $oUser->expires = $expires;
         $oUser->user_status = $status;
+        $oUser->dt_id = $dt_id;
         if ($oUser->save()) {
             return $oUser->uid;
         } else {
@@ -794,11 +800,17 @@ class User extends LSActiveRecord
                 'headerHtmlOptions' => ['class' => 'ls-sticky-column'],
                 'htmlOptions'       => ['class' => 'ls-sticky-column']
             ],
+            // [
+            //     "name"   => 'uid',
+            //     "header" => gT("User ID"),
+            //     'htmlOptions' => ['class' => 'uid']
+            // ],
             [
-                "name"   => 'uid',
-                "header" => gT("User ID"),
-                'htmlOptions' => ['class' => 'uid']
+                'header' => gT("Id"),
+                'value' => '$row + 1',
+                'htmlOptions' => ['class' => 'uid'],
             ],
+
             [
                 "name"   => 'users_name',
                 "header" => gT("Username")

@@ -158,7 +158,8 @@ class Permission extends LSActiveRecord
             'delete' => false,
             'import' => false,
             'export' => false,
-            'title' => gT("Superadministrator"),
+            'title' => gt("Superadmin"),
+            // 'title' => gT("Superadministrator"),
             'description' => gT("Unlimited administration permissions"),
             'warning' => gT("This setting allows an admin to perform all actions. Please make sure to assign this only to trusted persons."),
             'img' => 'ri-star-fill',
@@ -169,10 +170,24 @@ class Permission extends LSActiveRecord
             'delete' => false,
             'import' => false,
             'export' => false,
-            'title' => gT("Use internal database authentication"),
+            //'title' => gT("Use internal database authentication"),
+            'title' => gT("database authentication"),
             'description' => gT("Use internal database authentication"),
             'img' => 'ri-shield-keyhole-line',
         );
+
+        $aPermissions['dashboard'] = array(
+            'create' => false,
+            'read' => true,
+            'update' => false,
+            'delete' => false,
+            'import' => false,
+            'export' => true,
+            'title' => gT("Dashboard"),
+            'description' => gT("Access to the dashboard"),
+            'img' => 'ri-dashboard-fill', // Or any RemixIcon class you want
+        );
+
 
         /**
          * New event to allow plugin to add own global permission

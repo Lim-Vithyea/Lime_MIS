@@ -1,5 +1,5 @@
 <?php
-echo viewHelper::getViewTestTag('dashboard');
+echo viewHelper::getViewTestTag('dashboardv2');
 ?>
 
 
@@ -31,9 +31,9 @@ $data = Yii::app()->db->createCommand()
     ->leftJoin('lime_province p', 'd.pro_id = p.pid')
     ->queryAll();
 
-foreach ($data as $row) {
-    echo $row['users_name'] . ' - ' . $row['district'] . ' - ' . $row['province'] . '<br>';
-}
+// foreach ($data as $row) {
+//     echo $row['users_name'] . ' - ' . $row['district'] . ' - ' . $row['province'] . '<br>';
+//}
 
 
 ?>

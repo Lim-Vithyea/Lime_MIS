@@ -96,7 +96,7 @@
                  <?php if (Permission::model()->hasGlobalPermission('superadmin', 'read')): ?>
                     <li class="nav-item d-flex">
                         <a href="<?php echo $this->createUrl("surveyAdministration/dashboard"); ?>" class="nav-link ps-0">
-                            <span><?php eT("Dashboard") ?></span>
+                            <span><?php eT("Dashboard V2") ?></span>
                         </a>
                     </li>
                 <?php endif; ?> 

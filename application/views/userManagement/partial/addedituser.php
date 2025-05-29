@@ -42,6 +42,19 @@ Yii::app()->getController()->renderPartial(
         <?php echo $form->emailField($oUser, 'email', ['id' => 'User_Form_email', 'required' => 'required']); ?>
         <?php echo $form->error($oUser, 'email'); ?>
     </div>
+    <!-- district section -->
+    <div class="mb-3">
+    <?php
+    echo $form->labelEx($oUser, '', ['for' => 'User_Form_District']); 
+    echo $form->labelEx($oUser, 'dt_id');
+    echo $form->dropDownList(
+        $oUser,'dt_id',
+        CHtml::listData(District::model()->findAll(['order' => 'district ASC']), 'dt_id', 'district'),
+        ['class' => 'form-control']
+    );
+    echo $form->error($oUser, 'dt_id');
+    ?>
+    </div>
     <div class="mb-3">
         <label class="form-label" for='expires'><?php eT("Expiry date/time"); ?></label>
         <div class="has-feedback">
