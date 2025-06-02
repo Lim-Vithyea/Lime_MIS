@@ -83,7 +83,13 @@ class Authdb extends AuthPluginBase
 
         $new_pass = $presetPassword ?? createPassword();
         //add new field if want to add more data into user
-        $dt_id = flattenText(Yii::app()->request->getPost('dt_id'), false, true);
+        $dt_id = flattenText(Yii::app()->request->getPost('User')['dt_id'], false, true);
+        if (empty($dt_id) || !is_numeric($dt_id)) {
+            $oEvent->set('errorMessageTitle', gT("Missing district"));
+            $oEvent->set('errorMessageBody', gT("You must select a district."));
+            return;
+        }
+
         $iNewUID = User::insertUser($new_user, $new_pass, $new_full_name, Yii::app()->session['loginID'], $new_email, $expires, $status,$dt_id);
         if (!$iNewUID) {
             $oEvent->set('errorCode', self::ERROR_ALREADY_EXISTING_USER);

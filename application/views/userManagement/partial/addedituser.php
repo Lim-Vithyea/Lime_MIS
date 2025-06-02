@@ -47,11 +47,19 @@ Yii::app()->getController()->renderPartial(
     <?php
     echo $form->labelEx($oUser, '', ['for' => 'User_Form_District']); 
     echo $form->labelEx($oUser, 'dt_id');
+    // echo $form->dropDownList(
+    //     $oUser,'dt_id',
+    //     CHtml::listData(District::model()->findAll(['order' => 'district ASC']), 'dt_id', 'district'),
+    //     ['class' => 'form-control',
+    //     'reqiuired' => true
+    //     ]
+    // );
     echo $form->dropDownList(
-        $oUser,'dt_id',
-        CHtml::listData(District::model()->findAll(['order' => 'district ASC']), 'dt_id', 'district'),
-        ['class' => 'form-control']
+        $oUser, 'dt_id',
+        ['' => 'Select a district'] + CHtml::listData(District::model()->findAll(['order' => 'district ASC']), 'dt_id', 'district'),
+        ['class' => 'form-control', 'required' => true]
     );
+
     echo $form->error($oUser, 'dt_id');
     ?>
     </div>
