@@ -32,6 +32,7 @@ Yii::app()->getController()->renderPartial(
 
         <?php echo $form->error($oUser, 'users_name'); ?>
     </div>
+    <!-- fullname -->
     <div class="mb-3">
         <?php echo $form->labelEx($oUser, 'full_name', ['for' => 'User_Form_full_name']); ?>
         <?php echo $form->textField($oUser, 'full_name', ['id' => 'User_Form_full_name']); ?>
@@ -41,6 +42,17 @@ Yii::app()->getController()->renderPartial(
         <?php echo $form->labelEx($oUser, 'email', ['for' => 'User_Form_email']); ?>
         <?php echo $form->emailField($oUser, 'email', ['id' => 'User_Form_email', 'required' => 'required']); ?>
         <?php echo $form->error($oUser, 'email'); ?>
+    </div>
+    <!-- phone numebr -->
+     <div class="mb-3">
+        <?php echo $form->labelEx($oUser, 'phone', ['for' => 'User_Form_phone']); ?>
+        <?php echo $form->textField($oUser, 'phone', [
+            'id' => 'User_Form_phone',
+            'maxlength' => 11,
+            'class' => 'form-control',
+            'placeholder' => 'Enter phone number'
+        ]); ?>
+        <?php echo $form->error($oUser, 'phone'); ?>
     </div>
     <!-- district section -->
     <div class="mb-3">
@@ -56,7 +68,9 @@ Yii::app()->getController()->renderPartial(
     // );
     echo $form->dropDownList(
         $oUser, 'dt_id',
-        ['' => 'Select a district'] + CHtml::listData(District::model()->findAll(['order' => 'district ASC']), 'dt_id', 'district'),
+        ['' => 'Select a district'] + CHtml::listData(
+        District::model()
+        ->findAll(['order' => 'district ASC']), 'dt_id', 'district'),
         ['class' => 'form-control', 'required' => true]
     );
 
@@ -144,7 +158,7 @@ Yii::app()->getController()->renderPartial(
                    <?= ($oUser->isNewRecord ? '' : 'disabled="disabled"') ?> id="password_repeat"
                    class="form-control" type="password">
         </div>
-        <?php if ($oUser->isNewRecord) { ?>
+        <!-- <?php if ($oUser->isNewRecord) { ?>
             <div class="mb-3">
                 <label class="form-label">
                     <?= gT('Random password (suggestion):') ?>
@@ -152,7 +166,7 @@ Yii::app()->getController()->renderPartial(
                 <input type="text" class="form-control" readonly name="random_example_password"
                        value="<?= htmlspecialchars((string) $randomPassword) ?>"/>
             </div>
-        <?php } ?>
+        <?php } ?> -->
     </div>
 </div>
 

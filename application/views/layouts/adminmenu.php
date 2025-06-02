@@ -115,7 +115,7 @@
 
 
                 <!-- Extra menus from plugins -->
-                <?php $this->renderPartial("application.libraries.MenuObjects.views._extraMenu", ['extraMenus' => $extraMenus, 'middleSection' => true, 'prependedMenu' => false]); ?>
+                <?php //$this->renderPartial("application.libraries.MenuObjects.views._extraMenu", ['extraMenus' => $extraMenus, 'middleSection' => true, 'prependedMenu' => false]); ?>
             </ul>
         </div>
         <div class="collapse navbar-collapse justify-content-end">

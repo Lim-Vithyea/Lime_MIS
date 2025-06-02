@@ -46,6 +46,7 @@ use LimeSurvey\Models\Services\UserManager;
  * @property int $user_status User's account status (1: activated | 0: deactivated)
  * @property int $dt_id user district
  * @property int $pid province
+ * @property string $phone phone_number
  */
 
 class User extends LSActiveRecord
@@ -132,7 +133,7 @@ class User extends LSActiveRecord
             array('dt_id', 'required'),
             array('dt_id', 'numerical', 'integerOnly' => true),
             array('dt_id', 'safe'),
-
+            array('phone', 'match', 'pattern' => '/^\d{9,11}$/', 'message' => 'Phone number must be between 9 and 11 digits.'),
 
                 //todo: write a rule for date (can also be null)
             //array('lastForgotPwEmail', 'numerical', 'integerOnly' => true, 'allowEmpty' => true),
@@ -200,7 +201,8 @@ class User extends LSActiveRecord
             'expires' => gT("Expiry date/time:"),
             'user_status' => gT("Status"),
             'dt_id' => gT("District"),
-            'pid' => gt("Province")
+            'pid' => gt("Province"),
+            'phone' => gt("Phone")
             
         ];
     }
@@ -276,11 +278,12 @@ class User extends LSActiveRecord
      * @param string $new_full_name
      * @param int $parent_user
      * @param string $new_email
+     * @param string $phone
      * @param string|null $expires
      * @param boolean $status
      * @return integer|boolean User ID if success
      */
-    public static function insertUser($new_user, $new_pass, $new_full_name, $parent_user, $new_email, $expires = null, $status = true,$dt_id)
+    public static function insertUser($new_user, $new_pass, $new_full_name, $parent_user, $new_email, $expires = null, $status = true,$dt_id,$phone)
     {
         $oUser = new self();
         $oUser->users_name = $new_user;
@@ -294,6 +297,7 @@ class User extends LSActiveRecord
         $oUser->expires = $expires;
         $oUser->user_status = $status;
         $oUser->dt_id = $dt_id;
+        $oUser->phone = $phone;
         if ($oUser->save()) {
             return $oUser->uid;
         } else {
@@ -810,7 +814,6 @@ class User extends LSActiveRecord
                 'value' => '$row + 1',
                 'htmlOptions' => ['class' => 'uid'],
             ],
-
             [
                 "name"   => 'users_name',
                 "header" => gT("Username")
@@ -822,6 +825,10 @@ class User extends LSActiveRecord
             [
                 "name"   => 'full_name',
                 "header" => gT("Full name")
+            ],
+            [
+                "name"   => 'phone',
+                "header" => gT("Phone number")
             ],
             [
                 "name"   => "created",

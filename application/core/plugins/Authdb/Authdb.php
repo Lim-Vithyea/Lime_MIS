@@ -65,6 +65,11 @@ class Authdb extends AuthPluginBase
             $new_user = flattenText($preCollectedUserArray['users_name']);
             $new_email = flattenText($preCollectedUserArray['email']);
             $new_full_name = flattenText($preCollectedUserArray['full_name']);
+            $phone = flattenText(Yii::app()->request->getPost('User')['phone'], false, true);
+            if(empty($phone)){
+                $oEvent->set('errorMessageTitle', gT("Failed to add user"));
+                $oEvent->set('errorMessageBody', gT("Invalid phone number."));
+            }
             $presetPassword = flattenText($preCollectedUserArray['password']);
             if (!empty($preCollectedUserArray['status'])) {
                 $status = $preCollectedUserArray['status'];
@@ -90,7 +95,7 @@ class Authdb extends AuthPluginBase
             return;
         }
 
-        $iNewUID = User::insertUser($new_user, $new_pass, $new_full_name, Yii::app()->session['loginID'], $new_email, $expires, $status,$dt_id);
+        $iNewUID = User::insertUser($new_user, $new_pass, $new_full_name, Yii::app()->session['loginID'], $new_email, $expires, $status,$dt_id,$phone);
         if (!$iNewUID) {
             $oEvent->set('errorCode', self::ERROR_ALREADY_EXISTING_USER);
             $oEvent->set('errorMessageTitle', '');
